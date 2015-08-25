@@ -17,6 +17,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 <!-- GSA ADP Schedule Contract with IBM Corp. -->
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <title>Error subflow for the Message Splitter for WebSphere MQ: one-way (for XML) pattern</title>
+</head>
 <body id="mbi.mrrc.relmq.errorflow">
 <div><h1 class="topictitle1">Error subflow for the <span>Message Splitter for WebSphere MQ: one-way 
 (for XML)</span> pattern</h1>
@@ -25,8 +26,8 @@ All Rights Reserved * Licensed Materials - Property of IBM
 <p>To route the error message, use one of the following actions:</p>
 <ul>
 <li>Save any message elements that cannot be routed onto a separate bad message queue and continue 
-processing further elements</li>
-<li>Cancel the transaction and roll back the input message</li>
+processing further elements.</li>
+<li>Cancel the transaction and roll back the input message.</li>
 </ul>
 </div>
 <p>Any failure in the Routing flow directs the propagated message, containing one message element, to the 
@@ -54,9 +55,9 @@ Message Splitter Compute node, which detects the failure status and generates an
 other than routing failures, cause the <span class="msobjpropval">Cancel</span> action to occur. It is 
 assumed that all these exceptions are irrecoverable and it is not safe to continue processing.</li>
 <li>If error messages are required, an error message is prepared and written to the error queue.
-Details of the exception are written as an XML message. The details include:
+Details of the exception are written as an XML message. The following details are included:
 	<ul>
-	<li>Broker name</li>
+	<li>Integration node name</li>
 	<li>Flow name</li>
 	<li>Time stamp</li>
 	<li>Summary of the exception data</li>
@@ -65,7 +66,7 @@ Details of the exception are written as an XML message. The details include:
 <li>A user error is produced to roll back the input message and any message elements that have already been 
 processed. In this case, backout handling must be in place within the WebSphere MQ infrastructure; for example, 
 by using a backout queue.
-<p>Backout does not occur on exceptions that occur after all of the message elements have been successfully 
+<p>Backout does not occur on exceptions that occur after all of the message elements are successfully 
 written. This type of exception might occur in error messages or log messages.</p></li>
 </ol>
 </li>

@@ -17,6 +17,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 <!-- GSA ADP Schedule Contract with IBM Corp. -->
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <title>Request flow for the Message Splitter for WebSphere MQ: one-way (for XML) pattern</title>
+</head>
 <body id="mbi.mrrc.relmq.requestflow">
 <div><h1 class="topictitle1">Request flow for the <span>Message Splitter for WebSphere MQ: one-way (for XML)</span> pattern</h1>
 <p class="shortdesc">This pattern uses a single message flow. </p>
@@ -37,12 +38,12 @@ This node creates a local variable to
 hold a mutable tree that is a copy of the input. 
 This flow loops through the message tree, moving to a child 
 element within a container tag and propagating it onwards.
-As each element is selected the previous element is deleted to reduce memory usage.</li>
+As each element is selected, the previous element is deleted to reduce memory usage.</li>
 <li>The structure of the message is determined by the pattern parameters,
-and if a message does not conform to this structure an error is produced.</li>
+and, if a message does not conform to this structure, an error is produced.</li>
 <li>A check is made that the message includes the container path, that is, the container for all of the 
-elements to be	processed. If this container path is specified as <span class="msobjpropval">*:*</span>, 
-the container is considered to be the root tag, whatever its name, and
+elements that are to be processed. If this container path is specified as <span class="msobjpropval">*:*</span>, 
+the container is considered to be the root tag, and
 message elements that are children of the root are extracted.</li>
 <li>If the <span class="msobjprop">Message element name</span> pattern parameter is 
 <span class="msobjpropval">*:*</span>, all elements 
@@ -64,8 +65,8 @@ directs control to the Failure node.
 	Failure node is not connected and the Compute node  produces a user error
 	causing the flow to back out.</li></ul>
 	</li>
-<li>When a move to next element fails, because all of the elements have been processed, 
-the Log subflow is called, if logging is required by the pattern parameters. 
+<li>When all of the elements have been processed, 
+the Log subflow is called (if logging is required by the pattern parameters). 
 At this point the message flow always stops successfully
 and the transaction is committed. Any errors that occur in logging are caught and processed 
 by writing to a Trace node.</li>
