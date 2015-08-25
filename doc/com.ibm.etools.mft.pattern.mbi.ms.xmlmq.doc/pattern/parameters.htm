@@ -162,7 +162,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">
 										<span class="msobjpropval">IN</span></td>
-									<td valign="top" width="*">This pattern parameter identifies the broker queue 
+									<td valign="top" width="*">The queue 
 										on which the XML messages are received.</td>
 								</tr>
 								<tr>
@@ -247,7 +247,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">
 										<span class="msobjpropval">No Routing</span>
 									</td>
-									<td valign="top" width="*">Valid values are:
+									<td valign="top" width="*">The following values are valid:
 										<ul>
 											<li>
 												<span class="msobjpropval">No Routing</span>
@@ -302,8 +302,8 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">&nbsp;</td>
-									<td valign="top" width="*">This parameter defines the queue manager to which 
-										all output messages are sent. If left blank, the default is the broker queue manager.
+									<td valign="top" width="*">The queue manager to which 
+										all output messages are sent. The default value is the queue manager that is specified on the integration node.
 									</td>
 								</tr>
 								<tr>
@@ -313,7 +313,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">
 										<span class="msobjpropval">OUT</span>
 									</td>
-									<td valign="top" width="*" >This parameter defines the destination queue.
+									<td valign="top" width="*" >The destination queue.
 									</td>
 								</tr>
 							</tbody>
@@ -362,7 +362,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
-									<td valign="top" width="*">The <span class="msobjprop">Namespace prefix</span> parameter is included in the XPath 
+									<td valign="top" width="*">The <span class="msobjprop">Namespace prefix</span> parameter that is included in the XPath 
 										<span class="msobjprop">Key location</span>	parameter in the definition of routes.</td>
 								</tr>
 								<tr>
@@ -370,7 +370,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
-									<td valign="top" width="*">The <span class="msobjprop">Namespace URI</span> is the namespace associated 
+									<td valign="top" width="*">The <span class="msobjprop">Namespace URI</span> of the namespace associated 
 										with the specified prefix.</td>
 								</tr>
 							</tbody>
@@ -403,10 +403,10 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
 									<td valign="top" width="*">
-								        <p>A key location is an XPath expression that defines a location within 
+								        <p>An XPath expression that defines a location within 
 										the record that is being propagated. For example, <tt>$Root/XMLNSC/submitPORequest/partNo</tt>. </p>
 										<p>For more information about the type of expression to use, 
-										see "Route node" and "Using XPath" in the IBM Integration documentation.</p>
+										see "Route node" and "Using XPath" in the IBM Integration Bus documentation.</p>
 										<p>
 										Namespaces can be included if they are specified in the optional 
 										<span class="msobjprop">Namespace table</span>.
@@ -419,8 +419,8 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
 									<td valign="top" width="*">
-										This parameter contains the value that the <span class="msobjprop">Key location</span> field 
-										in the incoming message must match to select this route.
+										The value that must match the <span class="msobjprop">Key location</span> field 
+										in the incoming message for this route to be selected.
 									</td>
 								</tr>
 								<tr>
@@ -429,8 +429,8 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">&nbsp;</td>
 									<td valign="top" width="*">
-										This parameter defines the queue manager for this 
-										routing destination. If left blank, the default is the broker queue manager.
+										The queue manager for this 
+										routing destination. The default value is the queue manager that is associated with the integration node.
 									</td>
 								</tr>
 								<tr>
@@ -439,7 +439,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
 									<td valign="top" width="*">
-										This parameter defines the queue for this routing destination.
+										The queue for this routing destination.
 									</td>
 								</tr>
 							</tbody>
@@ -484,7 +484,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
 									<td valign="top" width="*">
-										This parameter defines the data source from which a route can be 
+										The data source from which a route can be 
 										selected. Routing information is looked up in the 
 										<tt>ROUTING_TABLE</tt> table.
 									</td>
@@ -495,12 +495,10 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
 									<td valign="top" width="*">
-										This parameter defines a routing context so that 
-										you can use a <tt>ROUTING_TABLE</tt>
-										for more than one mediation flow. 
+										The routing context. 
 										<p>Only rows in which the <tt>ROUTING_CONTEXT</tt> field 						 
-										matches the <span class="msobjprop">Routing data context</span> value 
-										are selected for routing lookup and are added to 
+										matches the <span class="msobjprop">Routing context</span> value 
+										are selected for routing lookup, and are added to 
 										the in-memory cache.</p>
 									</td>
 								</tr>
@@ -510,7 +508,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
 									<td valign="top" width="*">
-										This parameter defines how the first key is extracted from the propagated 
+										The location of the first key in the propagated 
 										message element. This parameter is defined as an ESQL expression. 
 										<p>The first key is used to select on <tt>VARIABLE1</tt> in a data source routing entry. 
 										The location must be in the form <tt>InputBody</tt> or <tt>InputRoot</tt>.</p>
@@ -522,7 +520,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Not applicable</td>
 									<td valign="top" width="*">
-										This parameter defines how an optional second key is extracted from the propagated 
+										The location of an optional second key in the propagated 
 										message element. This parameter is defined as an ESQL field reference expression. 
 										<p>The second key is used to select on <tt>VARIABLE2</tt> in a data source routing entry. 
 										The location must be in the form <tt>InputBody</tt> or <tt>InputRoot</tt>.</p></td>
@@ -534,7 +532,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Cleared</td>
 									<td valign="top" width="*">
 										If this parameter is selected, the in-memory cache 
-										of routing data is refreshed from the  data source  
+										of routing data is refreshed from the data source  
 										when a refresh message is received.
 									</td>
 								</tr>
@@ -593,7 +591,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">No</td>
 									<td valign="top" width="*" class="invisible">Cleared</td>
 									<td valign="top" width="*">
-										This pattern parameter determines whether the 
+										Determines whether the 
 										pattern instance includes the code for logging.
 										<p>
 										If cleared, the logging subflow is not included.
@@ -612,10 +610,10 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">&nbsp;</td>
 									<td valign="top" width="*">
-										This pattern parameter defines the queue manager for logging. 
-										It can be left blank if the broker queue manager is used for logging.
+										The queue manager for logging. 
+										The parameter value can be left blank if the queue manager that is associated with the queue manager is used for logging.
 										<p>
-										It is required only if <span class="msobjprop">Logging required</span> is selected.
+										A value for the parameter is required only if <span class="msobjprop">Logging required</span> is selected.
 										</p>
 									</td>
 								</tr>
@@ -625,9 +623,9 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible"><span class="msobjpropval">LOG</span></td>
 									<td valign="top" width="*">
-										This pattern parameter defines the queue for logging.
+										The queue to use for logging.
 										<p>
-										It is required only if <span class="msobjprop">Logging required</span> is selected.
+										A value for this parameter is required only if <span class="msobjprop">Logging required</span> is selected.
 										</p>
 									</td>
 								</tr>
@@ -673,7 +671,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">Selected</td>
 									<td valign="top" width="*">
-										This pattern parameter determines whether the pattern instance 
+										Determines whether the pattern instance 
 										includes the code for placing error messages on a queue.
 										<p>
 										If selected, values must be set for 
@@ -689,9 +687,9 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">&nbsp;</td>
 									<td valign="top" width="*">
-										This pattern parameter defines the queue manager for error logging.
+										The queue manager to use for error logging.
 										<p>
-										It is required only if <span class="msobjprop">Error message required</span> is selected.
+										A value for this parameter is required only if <span class="msobjprop">Error message required</span> is selected.
 										</p>
 									</td>
 								</tr>
@@ -701,9 +699,9 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible"><span class="msobjpropval">ERROR</span></td>
 									<td valign="top" width="*">
-										This pattern parameter defines the queue for error messages.
+										The queue to use for error messages.
 										<p>
-										It is required only if <span class="msobjprop">Error message required</span> is selected.
+										A value for this parameter is required only if <span class="msobjprop">Error message required</span> is selected.
 										</p>
 									</td>
 								</tr>
@@ -715,8 +713,8 @@ All Rights Reserved * Licensed Materials - Property of IBM
 										<span class="msobjpropval">Save</span>
 									</td>
 									<td valign="top" width="*">
-										This parameter defines the action that is taken when a 
-										message element cannot be routed. Valid values are:
+										The action to take when a 
+										message element cannot be routed. The following values are valid:
 										<ul>
 											<li>
 												<span class="msobjpropval">Save</span>
@@ -743,11 +741,11 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible">Yes</td>
 									<td valign="top" width="*" class="invisible">&nbsp;</td>
 									<td valign="top" width="*">
-										This pattern parameter defines the queue manager 
+										The queue manager 
 										for saving message elements that cannot be routed. 
-										If left blank, the default is the broker queue manager.
+										The default value is the queue manager that is associated with the integration node.
 										<p>
-										This parameter is required only if the value of the 
+										A value for this parameter is required only if the value of the 
 										<span class="msobjprop">Bad message action</span>
 										parameter is 
 										<span class="msobjpropval">Save</span>.
@@ -762,10 +760,10 @@ All Rights Reserved * Licensed Materials - Property of IBM
 										<span class="msobjpropval">BAD</span>
 									</td>
 									<td valign="top" width="*">
-										This pattern parameter defines the queue for 
+										The queue for 
 										saving message elements that cannot be routed.
 										<p>
-										This parameter is required only if the value of the 
+										A value for this parameter is required only if the value of the 
 										<span class="msobjprop">Bad message action</span>
 										parameter is 
 										<span class="msobjpropval">Save</span>.
@@ -815,7 +813,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 									<td valign="top" width="*" class="invisible"><span class="msobjpropval">mqsi</span></td>
 									<td valign="top" width="*">
 										If set, all message flows and ESQL files are created in the 
-										named broker schema. If not set the default schema is used.</td>
+										named broker schema. If not set, the default schema is used.</td>
 								</tr>
 								<tr>
 									<th align="left" valign="top" width="*" class="firstcol">Flow prefix</th>

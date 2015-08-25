@@ -17,6 +17,7 @@ All Rights Reserved * Licensed Materials - Property of IBM
 <!-- GSA ADP Schedule Contract with IBM Corp. -->
 	<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <title>Route subflow for the Message Splitter for WebSphere MQ: one-way (for XML) pattern</title>
+</head>
 <body id="mbi.mrrc.relmq.log">
 <div><h1 class="topictitle1">Route subflow for the <span>Message Splitter for WebSphere MQ: one-way (for XML)</span> pattern</h1>
 
@@ -52,10 +53,10 @@ and the message is passed to the Failure terminal.</p>
 and this terminal is connected to a single MQOutput node that is configured to take a destination list.</p>
 <p>The routing subflow checks if the cache requires refreshing by checking whether the 
 value of the <span class="filepath">CacheQueueTable.valid</span> shared row variable is set
-to <tt>NULL</tt>. It is set to <tt>NULL</tt> when the flow starts and 
+to <tt>NULL</tt>. It is set to <tt>NULL</tt> when the flow starts, and 
 also if <span class="msobjprop">Cache refresh</span> 
 is enabled and a
-refresh message has been sent to <span class="msobjprop">Refresh queue</span>.
+refresh message is sent to <span class="msobjprop">Refresh queue</span>.
 Refresh messages set the value to <tt>NULL</tt>.</p>
 <p>If the cache requires refreshing, the
 ROUTING_TABLE table of the data source, specified in the <span class="msobjprop">Routing data source</span> 
@@ -67,7 +68,7 @@ parameter are read into an in-memory cache,  which is done automatically to prev
 while the cache is in an inconsistent state.</p>
 <p>The structure of the cached data is:</p>
 <pre>VARIABLE1, VARIABLE2, QUEUE_MANAGER, QUEUE_NAME </pre>
-<p>The lookup is performed by extracting one, or two,
+<p>The lookup is performed by extracting one or two
 key values from the message element, by using ESQL expressions that are defined as
 pattern parameters. Define pattern parameters by using a statement in the following form: </p>
 <pre>SET KEY = &lt;pattern parameter&gt;</pre>
@@ -75,7 +76,7 @@ pattern parameters. Define pattern parameters by using a statement in the follow
 from the routing data, use a WHERE clause: </p>
 <pre>WHERE S.VARIABLE1 = KEY1</pre> 
 <p>If a second key is specified, the WHERE clause used
-for selection is: </p>
+for selection is as follows: </p>
 <pre>WHERE S.VARIABLE1 = KEY1 and S.VARIABLE2 = KEY2</pre>
 <p>This selection sets the queue manager and queue into the local environment
 that is used in the MQOutput node. Multiple rows can
